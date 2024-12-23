@@ -59,7 +59,7 @@ for linha in dados:
     #Criar variável Valor   
     strValor = linha[3]
     convertidostrValor = float(strValor)
-    strValor = str(f"{convertidostrValor:.2f}")
+    strValor = str(int(convertidostrValor))
 
     #Criar variável Data
     strData = linha[4]
@@ -89,7 +89,7 @@ for linha in dados:
         not_found("campoValor")
     bot.click()
     bot.type_keys(["ctrl", "a"])
-    bot.paste(strValor)
+    bot.kb_type(strValor)
 
     # Mapeando o campo Data
     if not bot.find("campoData", matching=0.5, waiting_time=10000):
@@ -101,19 +101,9 @@ for linha in dados:
     if not bot.find("btnGravar", matching=0.9, waiting_time=10000):
         not_found("btnGravar")
     bot.click()
+
     
-    
-    #def main():
     
     
 
     
-
- 
-
-#def not_found(label):
-    #print(f"Element not found: {label}")
-
-
-#if __name__ == '__main__':
-    #main()
